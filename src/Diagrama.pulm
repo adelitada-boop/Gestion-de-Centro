@@ -1,0 +1,33 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Usuario {
+    - id: Long
+    - nombre: String
+    - email: String
+    + getId(): Long
+}
+
+class Asignatura {
+    - idAsignatura: Long
+    - nombre: String|
+    + getNombre(): String
+}
+
+class Docente {
+    - cedula: String
+    - nombre: String
+    - cargaHoraria: int
+    - anioIngreso: int
+}
+
+class Inasistencia {
+    - idInasistencia: Long
+    - fecha: String
+    - hora: String
+    - motivo: String
+}
+
+Asignatura --> Docente : asignado
+Inasistencia --> Docente : registra
+@enduml
